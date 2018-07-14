@@ -72,7 +72,12 @@ print('模型： y= %f *x + %d'%(model_coef,model_intercept))
 r2 = line_moder_sales.score(x,y)
 print(r2)
 
-
+"""
+6、销量预测
+"""
+new_x = 84610
+pre_y = line_moder_sales.predict(new_x)
+print(np.round(pre_y))#np.round()函数，四舍五入
 
 
 
