@@ -41,7 +41,8 @@ def create_table(filepath):
             col_values = sheet.col_values(i)#第i列的所有数据
             h=large_atr(col_values) # 每列最大长度
             insert_yuju = insert_yuju  +  '`' + str(sheet.cell(0,i).value) +'`,'
-            create_table = create_table + '`' + str(sheet.cell(0,i).value) + '` VARCHAR(' + str(h) + ') null comment \"'  + str(sheet.cell(0,i).value) + ' \",' + "\n\r"
+            create_table = create_table + '`' + str(sheet.cell(0,i).value) + '` VARCHAR('+ str(h)+') null comment \"'  + str(sheet.cell(0,i).value) + '\",' + "\n\r"#换行等转义需要双引号
+            # create_table = create_table + '`' + str(sheet.cell(0,i).value) + '` VARCHAR('+ str(h)+') null,' 省掉注释
         t=name_1 + sheet_name#表名后半截
         create_table_0 ='drop table if EXISTS `jess_'
         create_table_1 = ' create table if not exists `jess_'
